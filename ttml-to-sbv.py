@@ -4,10 +4,10 @@
 #	keep in mind its not a classic .sbv
 #	instead of 0:00:25.199,0:00:29.099
 #	the timestamp is in the format 00:02:29.67;00:02:31.56
-#	that's ok though because our c0des can handle 
+#	this was for my own needs, but you can easily change the ; in line 22 to ,
 #
 # 	script written by julia greig on apr 3 2017
-#
+#	plz enjoy!!
 
 import glob
 from bs4 import BeautifulSoup
