@@ -12,7 +12,7 @@
 import glob
 from bs4 import BeautifulSoup
 fullscript = ""
-for file in glob.glob("*.xml"):
+for file in glob.glob("*.ttml"):
     with open(file) as infile:
     	soup = BeautifulSoup(infile)
     	for p in soup.find_all('p'):
