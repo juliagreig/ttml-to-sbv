@@ -12,15 +12,19 @@
 import glob
 from bs4 import BeautifulSoup
 for file in glob.glob("*.ttml"):
-    fullscript = ""
-    with open(file) as infile:
-    	soup = BeautifulSoup(infile)
-    	for p in soup.find_all('p'):
-    		start = p["begin"]
-    		end = p["end"]
-    		text = p.contents[0].strip()
-    		newline = "{};{}\n{}\n".format(start, end, text)
-    		fullscript += newline
+	fullscript = ""
+	with open(file) as infile:
+		soup = BeautifulSoup(infile)
+		for p in soup.find_all('p'):
+			start = p["begin"]
+			end = p["end"]
+			p_strings = p.find_all(string=True)
+			text = ""
+			for string in p_strings:
+				text += string.strip()
+			print text
+			newline = "{};{}\n{}\n".format(start, end, text)
+			fullscript += newline
 	newfilename = '{}.sbv'.format(file[:-4])
 	new_file = open(newfilename, 'w')
 	new_file.write(fullscript)
