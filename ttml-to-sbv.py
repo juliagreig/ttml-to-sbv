@@ -21,7 +21,7 @@ for file in glob.glob("*.ttml"):
 			p_strings = p.find_all(string=True)
 			text = ""
 			for string in p_strings:
-				text += string.strip()
+				text += " " + string.strip()
 			print text
 			newline = "{};{}\n{}\n".format(start, end, text)
 			fullscript += newline
