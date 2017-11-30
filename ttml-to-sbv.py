@@ -11,8 +11,9 @@
 
 import glob
 from bs4 import BeautifulSoup
-for file in glob.glob("*.ttml"):
+for file in glob.glob("**/*.ttml"):
 	fullscript = ""
+	print file
 	with open(file) as infile:
 		soup = BeautifulSoup(infile)
 		for p in soup.find_all('p'):
