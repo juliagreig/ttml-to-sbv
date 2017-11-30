@@ -26,7 +26,7 @@ for file in glob.glob("**/*.ttml"):
 			print text
 			newline = "{};{}\n{}\n".format(start, end, text)
 			fullscript += newline
-	newfilename = '{}.sbv'.format(file[:-4])
+	newfilename = '{}sbv'.format(file[:-4])
 	new_file = open(newfilename, 'w')
 	new_file.write(fullscript)
 	new_file.close()
